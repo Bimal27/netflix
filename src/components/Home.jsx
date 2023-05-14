@@ -28,9 +28,9 @@ export default class Home extends Component {
 	
 	componentDidMount = async () => {
 		try {
-			let response = await fetch(`http://www.omdbapi.com/?apikey=f7c25f33&s=${this.state.sections[0].query}`)
-			let responseTwo = await fetch(`http://www.omdbapi.com/?apikey=f7c25f33&s=${this.state.sections[1].query}`)
-			let responseThree = await fetch(`http://www.omdbapi.com/?apikey=f7c25f33&s=${this.state.sections[2].query}`)
+			let response = await fetch(`https://www.omdbapi.com/?apikey=f7c25f33&s=${this.state.sections[0].query}`)
+			let responseTwo = await fetch(`https://www.omdbapi.com/?apikey=f7c25f33&s=${this.state.sections[1].query}`)
+			let responseThree = await fetch(`https://www.omdbapi.com/?apikey=f7c25f33&s=${this.state.sections[2].query}`)
 			let data = await Promise.all([response, responseTwo, responseThree]).then(responses => {
 				return Promise.all(responses.map(r => r.json()))
 			})
